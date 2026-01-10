@@ -29,12 +29,7 @@
     <br><br>
 
     Gender
-
-        <input type="radio" th:field="*{gender}" th:value="MALE" />
-        <label>Male</label>
-
-        <input type="radio" th:field="*{gender}" th:value="FEMALE" />
-        <label> Female</label>
+        <input type="radio" th:each="gender : ${genders}" th:field="*{gender}" th:value="${gender}" th:text="${gender}" />
  <br><br>
 
     <input type="submit" value="Submit" />

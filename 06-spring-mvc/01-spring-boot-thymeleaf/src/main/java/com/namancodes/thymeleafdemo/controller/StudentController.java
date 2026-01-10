@@ -17,6 +17,9 @@ public class StudentController {
     @Value("${app.countries}")
     private List<String> countries;
 
+    @Value("${genders}")
+    private List<String> genders;
+
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel){
 
@@ -25,8 +28,9 @@ public class StudentController {
         // create a student object
         Student theStudent = new Student();
 
-
+        // sending data from app.prop to model
         theModel.addAttribute("countries", countries);
+        theModel.addAttribute("genders",genders);
 
         // add student object to the model
         theModel.addAttribute("student",theStudent);
