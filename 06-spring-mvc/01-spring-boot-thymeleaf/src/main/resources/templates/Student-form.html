@@ -20,13 +20,22 @@
     Country
 
     <select th:field="*{country}">
-        <option th:value="Brazil">Brazil</option>
-        <option th:value="India">India</option>
-        <option th:value="France">France</option>
-        <option th:value="Germany">Germany</option>
+        <option th:each="country : ${countries}"
+                th:value="${country}"
+                th:text="${country}">
+        </option>
     </select>
 
     <br><br>
+
+    Gender
+
+        <input type="radio" th:field="*{gender}" th:value="MALE" />
+        <label>Male</label>
+
+        <input type="radio" th:field="*{gender}" th:value="FEMALE" />
+        <label> Female</label>
+ <br><br>
 
     <input type="submit" value="Submit" />
 
